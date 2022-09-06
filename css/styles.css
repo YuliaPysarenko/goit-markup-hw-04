@@ -77,6 +77,9 @@ img {
     line-height: 1.14;
     letter-spacing: 0.02em;
     cursor: pointer;
+
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts :visited {
@@ -88,7 +91,26 @@ color: var(--accent-color);
 
 .contacts .contacts-link.current {
     color: var(--accent-color);
+    
+    position: relative;
+    display: block;
+   
 }   
+
+.contacts .contacts-link.current::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    left: 0;
+    bottom: 0;
+
+    position: absolute;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
 
 .social-link-mail,.social-link-tel {
     color: var(--titel-text-color);
@@ -97,6 +119,10 @@ color: var(--accent-color);
         line-height: 1.14;
         letter-spacing: 0.02em;
     }
+
+  .social-link {
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
  .social-link:hover,.social-link:focus {
     color: var(--accent-color);
@@ -160,11 +186,16 @@ border-bottom: 1px solid #ECECEC;
     display: flex;
    
     align-items: center;
-     margin-left: auto;
+    margin-left: auto;
 }
 .items + .items {
     margin-left: 30px;
 }
+
+.items {
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .items:hover,.items:focus {
     fill: var(--accent-color);
 }
@@ -172,6 +203,9 @@ border-bottom: 1px solid #ECECEC;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .social-link-mail:hover,.social-link-mail:focus,
@@ -185,6 +219,8 @@ border-bottom: 1px solid #ECECEC;
     height: 12px;
    fill: var(--titel-text-color);
   margin-right: 10px;
+
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
  .icon-envelope:hover,
@@ -197,6 +233,9 @@ border-bottom: 1px solid #ECECEC;
     width: 10px;
     height: 16px;
     margin-right: 10px;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
  }
 
 .icon-smartphone:hover,
@@ -249,6 +288,9 @@ border-bottom: 1px solid #ECECEC;
         margin: 0px auto;
         padding: 10px 32px 10px 32px;
         letter-spacing: 0.06em;
+
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
 }
 
 .post-button:hover,.post-button:focus {
@@ -353,13 +395,42 @@ border-bottom: 1px solid #ECECEC;
     width: 370px;
     margin-right: 30px;
     margin-bottom: 0px;
-
 }
 .foto:nth-child(3) {
     margin-right: 0px;
     padding-right: 0px;
 }
 
+/* Переходы и анимац. в разделе чем мы занимаемся  */
+.foto-foun {  
+     position: relative;
+}
+    
+.foun {
+  
+    width: 370px;
+    height: 70px;
+    left: 615px;
+    top: 1432px;
+
+    background: rgba(47, 48, 58, 0.8);
+   
+    position: absolute;
+    left: 0;
+
+}
+
+
+.foun-text {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.14;
+        text-align: center;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        
+        color: var(--primary-white-color);          
+}
 
 
 /* Фон и декор. ел. в разделе особенности. */
@@ -459,6 +530,10 @@ border-bottom: 1px solid #ECECEC;
     width: 100%;
     height: 100%; 
     border-radius: 50%;    
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .icon-teams-link:hover,.icon-teams-link:focus {
@@ -510,6 +585,9 @@ height: 100%;
 fill: rgba(175, 177, 184, 1);
 border: 1px solid rgba(175, 177, 184, 1);
 border-radius: 4px;
+
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 
@@ -520,6 +598,8 @@ border-radius: 4px;
 }
 .icon-logo {
 fill:rgba(175, 177, 184, 1);
+
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 } 
 
 .icon-logo:hover,.icon-logo:focus {
@@ -615,7 +695,10 @@ fill:rgba(175, 177, 184, 1);
     height: 100%;
     border-radius:50%;
     fill: var(--primary-white-color);
-    background-color:rgba(255, 255, 255, 0.1); 
+    background-color:rgba(255, 255, 255, 0.1);
+    
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .icon-footer-link:hover,.icon-footer-link:focus {
     background-color: var(--accent-color);
@@ -651,14 +734,7 @@ fill:rgba(175, 177, 184, 1);
 }
 
 
-.button-iten:hover,.button-iten:focus 
-{
-    color: var(--primary-white-color);
-    background-color: var(--accent-color);
-    }
-    /* .button-iten :not(:nth-child(5n)) {
-    margin-right: 8px;
-} */
+
 .button-iten
 {   padding: 6px 22px;
      border: none;
@@ -670,10 +746,27 @@ fill:rgba(175, 177, 184, 1);
     line-height: 1.62;
     text-align: center;
     cursor: pointer;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
+.button-iten:hover,.button-iten:focus 
+{
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+    }
+    /* .button-iten :not(:nth-child(5n)) {
+    margin-right: 8px;
+} */
 
 /* Тень в портфолио (кнопки-ховер) */
+.buttons {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+
 .buttons :hover,.buttons :focus {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 
     0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -747,6 +840,8 @@ margin-right: 0px;
 .project-link {
     display: block;
     cursor: pointer;
+
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-link:hover,.project-link:focus {
     
